@@ -17,5 +17,5 @@ sudo docker build -t sampleapp .
 
 sudo docker stop samplerunning
 sudo docker rm samplerunning
-sudo docker run -t -d -P --name samplerunning sampleapp /bin/sh
+sudo docker run -t -d -p 8000:80 --name samplerunning sampleapp /bin/sh
 sudo docker ps -a
