@@ -9,7 +9,7 @@ def main():
     return render_template("index.html")
 
 @sample.route("/test")
-def main():
+def test():
     return "You are calling me from "+request.remote_addr
 
 if __name__ == "__main__":
