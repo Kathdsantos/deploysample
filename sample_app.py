@@ -8,5 +8,9 @@ sample = Flask(__name__)
 def main():
     return render_template("index.html")
 
+@sample.route("/test")
+def main():
+    return "You are calling me from "+request.ip
+
 if __name__ == "__main__":
     sample.run(host="0.0.0.0", port=80)
