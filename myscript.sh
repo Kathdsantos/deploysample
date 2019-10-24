@@ -1,3 +1,5 @@
+echo "THIS IS THE NEW FILE."
+
 mkdir tempdir
 mkdir tempdir/templates
 mkdir tempdir/static
