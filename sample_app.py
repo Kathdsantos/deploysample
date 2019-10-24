@@ -10,7 +10,7 @@ def main():
 
 @sample.route("/test")
 def main():
-    return "You are calling me from "+request.ip
+    return "You are calling me from "+request.remote_addr
 
 if __name__ == "__main__":
     sample.run(host="0.0.0.0", port=80)
