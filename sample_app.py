@@ -5,10 +5,12 @@ from flask import render_template
 sample = Flask(__name__)
 
 DBHOST = 'NOT SET'
-def getdb():
+def getdb(targethost = ''):
     import MySQLdb
-    global DBHOST
-    return MySQLdb.connect(host=DBHOST,
+    if targethost == '':
+        global DBHOST
+        targethost = DBHOST
+    return MySQLdb.connect(host=targethost,
                      user="devnetstudent",
                      passwd="pass",
                      db="products")
@@ -24,6 +26,11 @@ def test():
 @sample.route("/config")
 def config():
     return render_template("config.html")
+
+@sample.route("/get_config")
+def get_config():
+    global DBHOST
+    return DBHOST
 
 @sample.route("/config_action", methods=['GET', 'POST'])
 def config_action():
